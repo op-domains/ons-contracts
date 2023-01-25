@@ -5,7 +5,7 @@ import "../registry/ONS.sol";
 import "./profiles/ABIResolver.sol";
 import "./profiles/AddrResolver.sol";
 import "./profiles/ContentHashResolver.sol";
-import "./profiles/ONSResolver.sol";
+import "./profiles/DNSResolver.sol";
 import "./profiles/InterfaceResolver.sol";
 import "./profiles/NameResolver.sol";
 import "./profiles/PubkeyResolver.sol";
@@ -25,7 +25,7 @@ contract PublicResolver is
     ABIResolver,
     AddrResolver,
     ContentHashResolver,
-    ONSResolver,
+    DNSResolver,
     InterfaceResolver,
     NameResolver,
     PubkeyResolver,
@@ -109,7 +109,7 @@ contract PublicResolver is
             ABIResolver,
             AddrResolver,
             ContentHashResolver,
-            ONSResolver,
+            DNSResolver,
             InterfaceResolver,
             NameResolver,
             PubkeyResolver,

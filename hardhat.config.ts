@@ -148,6 +148,12 @@ const config: HardhatUserConfig = {
       tags: ['use_root'],
       chainId: 420,
       accounts: real_accounts,
+    },
+    goerli: {
+      url: 'https://goerli.infura.io/v3/',
+      tags: ['use_root'],
+      chainId: 5,
+      accounts: real_accounts,
     }
   },
   mocha: {},

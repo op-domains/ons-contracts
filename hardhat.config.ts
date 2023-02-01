@@ -150,7 +150,7 @@ const config: HardhatUserConfig = {
       accounts: real_accounts,
     },
     goerli: {
-      url: 'https://goerli.infura.io/v3/',
+      url: 'https://goerli.infura.io/v3/0722a322db3e472881be79bebc2e994c',
       tags: ['use_root'],
       chainId: 5,
       accounts: real_accounts,

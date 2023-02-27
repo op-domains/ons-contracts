@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/wrapper/StaticMetadataService.sol": {
+      "content": "//SPDX-License-Identifier: MIT\r\npragma solidity ~0.8.17;\r\n\r\ncontract StaticMetadataService {\r\n    string private _uri;\r\n    address public owner;\r\n\r\n    constructor(string memory _metaDataUri) {\r\n        _uri = _metaDataUri;\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function uri(uint256) public view returns (string memory) {\r\n        return _uri;\r\n    }\r\n\r\n    function setUri(string memory _metaDataUri) public {\r\n        require(msg.sender == owner, \"Only the contract owner can set the URI.\");\r\n        _uri = _metaDataUri;\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 10000
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

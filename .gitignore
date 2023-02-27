@@ -3,6 +3,7 @@ artifacts
 cache
 gasreport-*
 .env
+.yarn
 *.DS_Store
 node_modules
 build

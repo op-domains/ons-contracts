@@ -148,6 +148,12 @@ const config: HardhatUserConfig = {
       tags: ['use_root'],
       chainId: 420,
       accounts: real_accounts,
+    },
+    goerli: {
+      url: 'https://goerli.infura.io/v3/0722a322db3e472881be79bebc2e994c',
+      tags: ['use_root'],
+      chainId: 5,
+      accounts: real_accounts,
     }
   },
   mocha: {},
@@ -195,6 +201,20 @@ const config: HardhatUserConfig = {
         artifacts: [archivedDeploymentPath],
       },
     ],
+  },
+  
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
+    customChains: [
+      {
+        network: "goerli",
+        chainId: 5,
+        urls: {
+          apiURL: "https://api-goerli.etherscan.io/api",
+          browserURL: "https://goerli.etherscan.io/"
+        }
+      }
+    ]
   },
 }
 

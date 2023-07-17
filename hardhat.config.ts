@@ -147,10 +147,12 @@ const config: HardhatUserConfig = {
       url: 'https://goerli.optimism.io',
       tags: ['use_root'],
       chainId: 420,
+      // gas: 2100000,
+      // gasPrice: 8000000000,
       accounts: real_accounts,
     },
     goerli: {
-      url: 'https://goerli.infura.io/v3/0722a322db3e472881be79bebc2e994c',
+      url: 'https://web3metadata.ens.domains/v1/goerli',
       tags: ['use_root'],
       chainId: 5,
       accounts: real_accounts,
@@ -204,7 +206,7 @@ const config: HardhatUserConfig = {
   },
   
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.OPSCAN_API_KEY,
     customChains: [
       {
         network: "goerli",

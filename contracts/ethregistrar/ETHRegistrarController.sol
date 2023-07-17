@@ -41,7 +41,7 @@ contract ETHRegistrarController is
         0x070904f45402bbf3992472be342c636609db649a8ec20a8aaa65faaafd4b8701;
     uint64 private constant MAX_EXPIRY = type(uint64).max;
     BaseRegistrarImplementation immutable base;
-    IPriceOracle public immutable prices;
+    IPriceOracle public prices;
     uint256 public immutable minCommitmentAge;
     uint256 public immutable maxCommitmentAge;
     ReverseRegistrar public immutable reverseRegistrar;
@@ -88,6 +88,10 @@ contract ETHRegistrarController is
         nameWrapper = _nameWrapper;
     }
 
+    function setPrices(IPriceOracle _prices) external onlyOwner {
+        prices = _prices;
+    }
+    
     function rentPrice(string memory name, uint256 duration)
         public
         view
